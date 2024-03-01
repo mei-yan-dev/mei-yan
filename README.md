@@ -18,9 +18,32 @@ Tiers:
 
 Ranks 1-9 except Master and Grand
 
-Aspirant Magicians are screened to map their stats (STR, DEX, CON, QI and LUK). LUK is hidden stat. There are also other stats such as cast speed, and physical and magical efficiency. LUK cannot be raised. STR and DEX can be raised through physical efficiency. CON and QI can both be raised through both efficiency stats and herbal medicine. Cast speed is raised through magical efficiency.
+Aspirant Magicians are screened to map their stats (CON, QI and LUK). They are all hidden stat. There are also other stats such as cast speed, and physical and magical efficiency. LUK cannot be raised. CON can be raised through both efficiency stats and herbal medicine. Cast speed is raised through magical efficiency. CON raises total mana/qi which helps clear meridians (calculated every day) which raises QI stat. 
 
-Advancing through tiers raises every stats' base value except for cast speed.
+Advancing through tiers and ranks raises every stats' base value except for cast speed, approaching a logarithmic curve (limit increases for every advancement).
+
+### Basic Stats
+**Constitution(CON)**
+CON is a measurement of the body's ability to take physical and magical stress. It is also used for damage calculation, total mana/qi calculation, defense, magical defense.
+**Qi Circulation(QI)**
+Qi Circulation is the measurement of qi circulation in the body respective of the magicians realm (tier and rank). It is used for total mana/qi calculation, physical and magical efficiency. Lowers with every realm advancement.
+
+### Special Stats
+**Physical Efficiency**
+Body control. Raises attack, speed, cast speed. Raised through medicines and physical practice.
+
+**Magical Efficiency**
+Magical Control. Raises attack, magical attack, speed, cast speed. Raised through QI stat, medicines, and magical practice.
+
+**Cast Speed**
+Speeds up casting of spells(free-form and spell-form). Raised through physical and magical efficiency.
+
+### Affinity
+Ability to gather specific element particles causing less qi usage. Specific element awakening depends on environment's elemental properties e.g. fire room increases fire element awakening chance.
+
+### Removed Stats
+- Strength (STR) is a derivative property from the magician's constitution and physical efficiency. It might not be needed because damage calculation relies on constitution, QI, magical efficiency and other attack and resist values.
+- Dexterity (DEX) is a measure of speed, dodge/hit chance, body control which could be a derivative property of physical efficiency in this game. So it will have to be removed in the meantime.
 
 ## Challenges
 The user can create, and switch skills in limited slots while being able to move(using movement with magic abilities) during battle. Find out what design pattern(s) is needed to achieve this. The user can raise and harvest herbs in the game.

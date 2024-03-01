@@ -23,19 +23,19 @@ Aspirant Magicians are screened to map their stats (CON, QI and LUK). They are a
 Advancing through tiers and ranks raises every stats' base value except for cast speed, approaching a logarithmic curve (limit increases for every advancement).
 
 ### Basic Stats
-**Constitution(CON)**
+#### Constitution(CON)
 CON is a measurement of the body's ability to take physical and magical stress. It is also used for damage calculation, total mana/qi calculation, defense, magical defense.
-**Qi Circulation(QI)**
+#### Qi Circulation(QI)
 Qi Circulation is the measurement of qi circulation in the body respective of the magicians realm (tier and rank). It is used for total mana/qi calculation, physical and magical efficiency. Lowers with every realm advancement.
 
 ### Special Stats
-**Physical Efficiency**
+#### Physical Efficiency
 Body control. Raises attack, speed, cast speed. Raised through medicines and physical practice.
 
-**Magical Efficiency**
+#### Magical Efficiency
 Magical Control. Raises attack, magical attack, speed, cast speed. Raised through QI stat, medicines, and magical practice.
 
-**Cast Speed**
+#### Cast Speed
 Speeds up casting of spells(free-form and spell-form). Raised through physical and magical efficiency.
 
 ### Affinity

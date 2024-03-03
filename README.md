@@ -29,21 +29,47 @@ CON is a measurement of the body's ability to take physical and magical stress. 
 Qi Circulation is the measurement of qi circulation in the body respective of the magicians realm (tier and rank). It is used for total mana/qi calculation, physical and magical efficiency. Lowers with every realm advancement.
 
 ### Special Stats
-#### Physical Efficiency
-Body control. Raises attack, speed, cast speed. Raised through medicines and physical practice.
+#### Physical Efficiency and PE Coefficient
+- Body control. Raises attack, speed, cast speed. Raised through medicines and physical practice. 
+$$ n = new, c = current $$ 
+$$ nPE = cPE(1+pm+{1 \over pec}) $$
+$$ pec = (1-pyp) $$ 
 
-#### Magical Efficiency
-Magical Control. Raises attack, magical attack, speed, cast speed. Raised through QI stat, medicines, and magical practice.
+#### Magical Efficiency and ME Coefficient
+- Magical Control. Raises attack, magical attack, speed, cast speed. Raised through QI stat, medicines, and magical practice. 
+$$ ME = {1 \over (1-mec)} $$
 
 #### Cast Speed
 Speeds up casting of spells(free-form and spell-form). Raised through physical and magical efficiency.
 
+### Training Stats
+#### Medicine - Physique and Physical Practice
+- Medicine - Physique ($pm$) is the medicine's property to stimulate the magicians body to further accomodate magical particles.
+$$ pm = (1+{resist \over 100}) \times ({efficiency \times (tier+rank) \over 100})  $$
+$$ tier, rank, efficiency, resist = int$$
+- Physical practice ($pyp$) done by user within a day. 
+
+#### Medicine - Magick and Magical Practice
+
+
 ### Affinity
-Ability to gather specific element particles causing less qi usage. Specific element awakening depends on environment's elemental properties e.g. fire room increases fire element awakening chance.
+Ability to gather specific element particles causing less qi usage. Affected by ME. Specific element awakening depends on environment's elemental properties e.g. fire room increases fire element awakening chance.
 
 ### Removed Stats
-- Strength (STR) is a derivative property from the magician's constitution and physical efficiency. It might not be needed because damage calculation relies on constitution, QI, magical efficiency and other attack and resist values.
-- Dexterity (DEX) is a measure of speed, dodge/hit chance, body control which could be a derivative property of physical efficiency in this game. So it will have to be removed in the meantime.
+#### Strength (STR)
+STR is a derivative property from the magician's constitution and physical efficiency. It might not be needed because damage calculation relies on constitution, QI, magical efficiency and other attack and resist values.
+
+#### Dexterity (DEX)
+DEX is a measure of speed, dodge/hit chance, body control which could be a derivative property of physical efficiency in this game. So it will have to be removed in the meantime.
+
+## Item Stats
+### Medicine
+Medicine enhances the magician's physique and magical abilities through various ways. 
+- Cleaning up QI (increasing QI stat), 
+- Connecting mind to soul sea (increasing ME) e.g. bigger soul sea/firmer hold of authority, 
+- Integrating magic particles to physique (increasing PE) e.g. cleaner/bigger meridians, 
+- Connecting nerve cells/faster reaction time, improving physique (CON) e.g. more magical energy per cell -> greater strength, 
+- Better eyesight, healing wounds e.g. recovering hp, regeneration
 
 ## Challenges
 The user can create, and switch skills in limited slots while being able to move(using movement with magic abilities) during battle. Find out what design pattern(s) is needed to achieve this. The user can raise and harvest herbs in the game.

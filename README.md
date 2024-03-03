@@ -30,13 +30,17 @@ Qi Circulation is the measurement of qi circulation in the body respective of th
 
 ### Special Stats
 #### Physical Efficiency and PE Coefficient
-- Body control. Raises attack, speed, cast speed. Raised through medicines and physical practice. 
-$$ n = new, c = current $$ 
+- Body control. Raises attack, speed, cast speed. Raised through medicines and physical practice.
+
+$$ n = new, c = current $$
+
 $$ nPE = cPE(1+pm+{1 \over pec}) $$
+
 $$ pec = (1-pyp) $$ 
 
 #### Magical Efficiency and ME Coefficient
 - Magical Control. Raises attack, magical attack, speed, cast speed. Raised through QI stat, medicines, and magical practice. 
+
 $$ ME = {1 \over (1-mec)} $$
 
 #### Cast Speed
@@ -45,8 +49,11 @@ Speeds up casting of spells(free-form and spell-form). Raised through physical a
 ### Training Stats
 #### Medicine - Physique and Physical Practice
 - Medicine - Physique ($pm$) is the medicine's property to stimulate the magicians body to further accomodate magical particles.
+
 $$ pm = (1+{resist \over 100}) \times ({efficiency \times (tier+rank) \over 100})  $$
-$$ tier, rank, efficiency, resist = int$$
+
+$$ tier, rank, efficiency, resist = int $$
+
 - Physical practice ($pyp$) done by user within a day. 
 
 #### Medicine - Magick and Magical Practice

@@ -18,30 +18,58 @@ Tiers:
 
 Ranks 1-9 except Master and Grand
 
-Aspirant Magicians are screened to map their stats (CON, QI and LUK). They are all hidden stat. There are also other stats such as cast speed, and physical and magical efficiency. LUK cannot be raised. CON can be raised through both efficiency stats and herbal medicine. Cast speed is raised through magical efficiency. CON raises total mana/qi which helps clear meridians (calculated every day) which raises QI stat. 
+Aspirant Magicians are screened to map their stats (CON, CMP, QIC and LUK). They are all hidden stat. There are also other stats such as cast speed, and physical and magical efficiency. LUK cannot be raised. CON can be raised through both efficiency stats and herbal medicine. Cast speed is raised through magical efficiency. CON raises total mana/qi which helps clear meridians (calculated every day) which raises QIC stat. 
 
-Advancing through tiers and ranks raises every stats' base value except for cast speed, approaching a logarithmic curve (limit increases for every advancement).
+Advancing through tiers and ranks raises every stats' base value except for cast speed, an exponential curve (limit increases for every advancement).
 
-### Basic Stats
-#### Constitution(CON)
+## Basic Stats Multiplier
+### Constitution(CON)
 CON is a measurement of the body's ability to take physical and magical stress. It is also used for damage calculation, total mana/qi calculation, defense, magical defense.
-#### Qi Circulation(QI)
+
+- A base stat viewable in the game. 
+- Exponential ceiling growth
+
+
+
+Example:
+|Name            |Type               |Weight    |Base| |
+|----------------|-------------------|----------|----|-|
+|Constitution    |Attribute          |0.7       |0.5 |d|
+|Comprehension   |Attribute          |0.3       |0.3 |d|
+|Qi Circulation  |DerivedAttribute   |1.1       |0.7 |d|
+|Meridians       |Function           |1         |1   |d|
+
+### Comprehension (CMP)
+
+### Qi Circulation(QIC)
 Qi Circulation is the measurement of qi circulation in the body respective of the magicians realm (tier and rank). It is used for total mana/qi calculation, physical and magical efficiency. Lowers with every realm advancement.
+
+- Calculated base qi is dependent on tier and rank. 
+
+#### QI and ME
+$$ QIC = CON * {Qi^{1.4} \over Qi - 1} * 0.1 $$
+
+### Qi/Mana
+$$ Qi = ME $$
 
 ### Special Stats
 #### Physical Efficiency and PE Coefficient
-- Body control. Raises attack, speed, cast speed. Raised through medicines and physical practice.
+- Body control. Raises attack, speed, cast speed. Raised through medicines and physical practice. PE is ffected by Medicine - Physique(pm), PE Coefficient(pec),  
+- Logarithmic growth, capped at 100%
 
 $$ n = new, c = current $$
 
-$$ nPE = cPE(1+pm+{1 \over pec}) $$
-
-$$ pec = (1-pyp) $$ 
+$$ nPE = cPE \sqrt{(1+pm+{1 \over pec})} $$
 
 #### Magical Efficiency and ME Coefficient
 - Magical Control. Raises attack, magical attack, speed, cast speed. Raised through QI stat, medicines, and magical practice. 
+- Logarithmic growth, starts at 10, capped at 100%
 
-$$ ME = {1 \over (1-mec)} $$
+$$ ME_{ceiling} = {(QIC)^{1.5} \over QIC-1} \ln(QIC)+10 $$
+
+$$ x = (mm * mec) + mgp $$
+
+$$ ME_{\%}= 100\% <= {x \over ME_{ceiling}} * 100 $$
 
 #### Cast Speed
 Speeds up casting of spells(free-form and spell-form). Raised through physical and magical efficiency.
@@ -50,13 +78,19 @@ Speeds up casting of spells(free-form and spell-form). Raised through physical a
 #### Medicine - Physique and Physical Practice
 - Medicine - Physique ($pm$) is the medicine's property to stimulate the magicians body to further accomodate magical particles.
 
-$$ pm = (1+{resist \over 100}) \times ({efficiency \times (tier+rank) \over 100})  $$
+$$ pm = (1-{resist \over 100}) \times ({efficiency \times (tier+rank) \over 100})  $$
 
 $$ tier, rank, efficiency, resist = int $$
 
 - Physical practice ($pyp$) done by user within a day. 
 
 #### Medicine - Magick and Magical Practice
+
+- Magical practice ($mgp$) done by user within a day. 
+
+
+
+#### Practice Calculation
 
 
 ### Affinity
